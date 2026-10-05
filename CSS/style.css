@@ -424,6 +424,53 @@ ul {
     object-fit: contain;
 }
 
+.skill-label {
+    margin: 1.5rem 0 0.75rem;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.skills h3 + .skill-label {
+    margin-top: 0;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-list li {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.tech-list li:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.card-body .tech-list {
+    margin-top: 0.5rem;
+}
+
+.card-body .tech-list li {
+    background: var(--surface-2);
+}
+
+.card.wide {
+    grid-column: 1 / -1;
+    border-left: 3px solid var(--accent);
+}
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
