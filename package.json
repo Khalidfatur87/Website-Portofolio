@@ -1,0 +1,16 @@
+{
+  "name": "website-portofolio",
+  "private": true,
+  "scripts": {
+    "check:assets": "node scripts/check-assets.mjs",
+    "check:js": "node --check JS/script.js",
+    "lint:html": "html-validate index.html",
+    "lint:css": "stylelint CSS/*.css",
+    "test": "npm run check:assets && npm run check:js && npm run lint:html && npm run lint:css"
+  },
+  "devDependencies": {
+    "html-validate": "^9.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-recommended": "^14.0.0"
+  }
+}

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khalid Fatur Rahman - Software Engineering Student</title>
+    <meta name="description" content="Portfolio of Khalid Fatur Rahman, a Software Engineering student at Binus University building websites from front-end to back-end.">
+    <meta name="theme-color" content="#0b0f14">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Khalid Fatur Rahman - Software Engineering Student">
+    <meta property="og:description" content="Projects, experience and writing from a Software Engineering student at Binus University.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2334d399'/%3E%3Ctext x='32' y='45' font-size='36' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%2304210f'%3EK%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            try {
+                var theme = localStorage.getItem('theme');
+                if (!theme) {
+                    theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+                }
+                root.dataset.theme = theme;
+            } catch (e) {}
+        })();
+    </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+    <header class="site-header">
+        <nav class="nav container" aria-label="Main">
+            <a class="brand" href="#home">Khalid<span>.</span></a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button type="button" class="icon-btn lang-btn" id="lang-toggle" aria-label="Switch language">ID</button>
+                <button type="button" class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="i-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                    </svg>
+                    <svg class="i-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </button>
+                <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <path d="M3 6h18M3 12h18M3 18h18" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero container" id="home">
+            <div class="hero-text">
+                <p class="eyebrow" data-i18n="hero.hello">Hello, I'm</p>
+                <h1>Khalid Fatur <span class="grad">Rahman</span></h1>
+                <p class="role" data-i18n="hero.role">Software Engineering student at Binus University</p>
+                <p class="lead" data-i18n="hero.lead">I build websites from front-end to back-end, focused on scalable, maintainable and user-friendly systems.</p>
+                <div class="cta">
+                    <a class="btn btn-primary" href="ASSET/CV - Khalid Fatur Rahman.pdf" download="CV Khalid Fatur Rahman" data-i18n="hero.cv">Download CV</a>
+                    <a class="btn btn-ghost" href="#contact" data-i18n="hero.contact">Get in touch</a>
+                </div>
+            </div>
+            <div class="hero-photo">
+                <img src="ASSET/foto/foto.png" alt="Portrait of Khalid Fatur Rahman">
+            </div>
+        </section>
+
+        <section class="section container" id="about">
+            <div class="section-head reveal">
+                <p class="eyebrow" data-i18n="about.eyebrow">Get to know more</p>
+                <h2 data-i18n="about.title">About me</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p data-i18n="about.p1">I am a Software Engineering student at Binus University with a GPA of 3.19. I have high enthusiasm and dedication in developing technical skills and knowledge in the field of technology. I have studied various programming languages such as C++, Java, JavaScript, and Python, and have expertise in designing scalable, maintainable, and user-friendly application systems.</p>
+                    <p data-i18n="about.p2">I am experienced in building websites, covering front-end and back-end aspects. I believe that technology can change the world for the better, and I am committed to contributing to that change.</p>
+
+                    <ul class="stats">
+                        <li><strong>3.19</strong><span data-i18n="about.gpa">GPA</span></li>
+                        <li><strong>5</strong><span data-i18n="about.projects">Projects</span></li>
+                        <li><strong>4</strong><span data-i18n="about.experience">Experiences</span></li>
+                    </ul>
+                </div>
+
+                <div class="skills reveal">
+                    <h3 data-i18n="skills.title">Tools and skills</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-icon"><img src="ASSET/icon/Figma.png" alt="" loading="lazy"></span>Figma</li>
+                        <li><span class="skill-icon"><img src="ASSET/icon/VSCode.png" alt="" loading="lazy"></span>VSCode</li>
+                        <li><span class="skill-icon"><img src="ASSET/icon/Js.png" alt="" loading="lazy"></span>JavaScript</li>
+                        <li><span class="skill-icon"><img src="ASSET/icon/Python.png" alt="" loading="lazy"></span>Python</li>
+                        <li><span class="skill-icon"><img src="ASSET/icon/c++.png" alt="" loading="lazy"></span>C++</li>
+                        <li><span class="skill-icon"><img src="ASSET/icon/html.png" alt="" loading="lazy"></span>HTML</li>
+                        <li><span class="skill-icon"><img src="ASSET/icon/css.png" alt="" loading="lazy"></span>CSS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container" id="experience">
+            <div class="section-head reveal">
+                <p class="eyebrow" data-i18n="exp.eyebrow">Experience and organizations</p>
+                <h2 data-i18n="exp.title">Experience</h2>
+                <p class="sub" data-i18n="exp.sub">My experience and organizations while studying at Binus University.</p>
+            </div>
+
+            <div class="card-grid">
+                <article class="card reveal">
+                    <img class="card-media" src="ASSET/experience/fl.jpeg" alt="Freshmen Leader activity" loading="lazy">
+                    <div class="card-body">
+                        <p class="meta">Binus University · 14 Aug 2023 - 18 Aug 2023</p>
+                        <h3>Freshmen Leader B27</h3>
+                        <p data-i18n="exp1.desc">Guided and accompanied new students through the one-week campus orientation as Freshmen Leader.</p>
+                        <button type="button" class="link-btn" data-cert="ASSET/sertif/sertif-FL.png" data-title="Freshmen Leader B27" data-i18n="exp.view">View certificate</button>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <img class="card-media" src="ASSET/experience/fp.jpeg" alt="Freshmen Partner activity" loading="lazy">
+                    <div class="card-body">
+                        <p class="meta">Binus University · 12 Sep 2023 - 14 Jun 2024</p>
+                        <h3>Freshmen Partner B27</h3>
+                        <p data-i18n="exp2.desc">Helped new students understand the academic system and acted as their partner for a full year.</p>
+                        <button type="button" class="link-btn" data-cert="ASSET/sertif/sertif-FP.png" data-title="Freshmen Partner B27" data-i18n="exp.view">View certificate</button>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <img class="card-media" src="ASSET/experience/ketua.jpeg" alt="Badminton club activity" loading="lazy">
+                    <div class="card-body">
+                        <p class="meta">Binus University · 6 Jan 2024 - 14 Dec 2024</p>
+                        <h3>Chairman of Badminton Binus Bekasi</h3>
+                        <p data-i18n="exp3.desc">Organized regular training sessions, coordinated the board and members, and kept club operations running smoothly.</p>
+                        <button type="button" class="link-btn" data-cert="ASSET/sertif/sertif-chairman.jpeg" data-title="Chairman of Badminton Binus Bekasi" data-i18n="exp.view">View certificate</button>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <img class="card-media" src="ASSET/experience/basic.jpeg" alt="BASIC UI/UX competition" loading="lazy">
+                    <div class="card-body">
+                        <p class="meta">BASIC · 14 Jun 2023 - 31 Aug 2023</p>
+                        <h3>3rd Winner UI/UX Competition</h3>
+                        <p data-i18n="exp4.desc">Won 3rd place in an international UI/UX competition held by Binus, designing the UI/UX and building the system.</p>
+                        <button type="button" class="link-btn" data-cert="ASSET/sertif/sertif-basic.jpeg" data-title="3rd Winner UI/UX Competition" data-i18n="exp.view">View certificate</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container" id="projects">
+            <div class="section-head reveal">
+                <p class="eyebrow" data-i18n="proj.eyebrow">Browse my recent work</p>
+                <h2 data-i18n="proj.title">Projects</h2>
+            </div>
+
+            <div class="filters reveal" role="group" aria-label="Project filter">
+                <button type="button" class="chip is-active" data-filter="all" aria-pressed="true" data-i18n="filter.all">All</button>
+                <button type="button" class="chip" data-filter="web" aria-pressed="false" data-i18n="filter.web">Web</button>
+                <button type="button" class="chip" data-filter="design" aria-pressed="false" data-i18n="filter.design">UI/UX</button>
+                <button type="button" class="chip" data-filter="network" aria-pressed="false" data-i18n="filter.network">Networking</button>
+            </div>
+
+            <div class="card-grid" id="project-grid">
+                <article class="card project reveal" data-category="web">
+                    <img class="card-media contain" src="ASSET/porto/JeniusAcademy.png" alt="JeniusAcademy website preview" loading="lazy">
+                    <div class="card-body">
+                        <p class="meta tag">Web</p>
+                        <h3>JeniusAcademy</h3>
+                        <p data-i18n="p1.desc">The final lab project "Jenius Academy" is an educational platform offering high-quality online courses to help people build skills for the digital era.</p>
+                        <a class="link-btn" href="https://khalidfatur87.github.io/JeniusAcademy/html/homepage.html" target="_blank" rel="noopener noreferrer" data-i18n="proj.view">View project</a>
+                    </div>
+                </article>
+
+                <article class="card project reveal" data-category="web">
+                    <img class="card-media contain" src="ASSET/porto/RelaBerbagi.png" alt="Rela Berbagi website preview" loading="lazy">
+                    <div class="card-body">
+                        <p class="meta tag">Web</p>
+                        <h3>Tempat Untuk Rela Berbagi</h3>
+                        <p data-i18n="p2.desc">The final project "Rela Berbagi" is a website that makes sharing resources and assistance easier, promoting collaboration and mutual support in the community.</p>
+                        <a class="link-btn" href="https://fadhel-rizanda.github.io/RelaBerbagi/HTML/home.html" target="_blank" rel="noopener noreferrer" data-i18n="proj.view">View project</a>
+                    </div>
+                </article>
+
+                <article class="card project reveal" data-category="web">
+                    <img class="card-media contain" src="ASSET/porto/WaterGuard.png" alt="Water Guard website preview" loading="lazy">
+                    <div class="card-body">
+                        <p class="meta tag">Web</p>
+                        <h3>Water Guard</h3>
+                        <p data-i18n="p3.desc">The final lab project "Water Guard" is a platform for monitoring and managing water resources to promote sustainable usage and conservation.</p>
+                        <a class="link-btn" href="https://fadhel-rizanda.github.io/WaterGuard/HTML/home.html" target="_blank" rel="noopener noreferrer" data-i18n="proj.view">View project</a>
+                    </div>
+                </article>
+
+                <article class="card project reveal" data-category="network">
+                    <img class="card-media contain" src="ASSET/porto/TutorialInstallVm.png" alt="VMware tutorial video thumbnail" loading="lazy">
+                    <div class="card-body">
+                        <p class="meta tag">Networking</p>
+                        <h3>VMware Workstation and How To Use</h3>
+                        <p data-i18n="p4.desc">My team and I made a video tutorial on installing VMware Workstation and then installing the Debian Linux OS on it.</p>
+                        <a class="link-btn" href="https://www.youtube.com/watch?v=eb1R5z0vzdk" target="_blank" rel="noopener noreferrer" data-i18n="proj.view">View project</a>
+                    </div>
+                </article>
+
+                <article class="card project reveal" data-category="design">
+                    <img class="card-media contain" src="ASSET/porto/Use Case Diagram Engg.jpg" alt="Use case diagram for the UI/UX competition" loading="lazy">
+                    <div class="card-body">
+                        <p class="meta tag">UI/UX</p>
+                        <h3>System Design For UI/UX Competition</h3>
+                        <p data-i18n="p5.desc">In the UI/UX competition I helped build the system by creating the use case and activity diagrams.</p>
+                        <a class="link-btn" href="https://drive.google.com/drive/folders/1ctBTx9ZnwGIwZVI1TY7ZWEg4zdsSZaHT?usp=sharing" target="_blank" rel="noopener noreferrer" data-i18n="proj.view">View project</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container" id="blog">
+            <div class="section-head reveal">
+                <p class="eyebrow" data-i18n="blog.eyebrow">Writing</p>
+                <h2 data-i18n="blog.title">Blog</h2>
+                <p class="sub" data-i18n="blog.sub">Notes on networking and server administration.</p>
+            </div>
+
+            <div class="card-grid two">
+                <article class="card reveal">
+                    <img class="card-media" src="ASSET/blog/blog1.png" alt="Network security article cover" loading="lazy">
+                    <div class="card-body">
+                        <h3>Keamanan Jaringan</h3>
+                        <p data-i18n="b1.desc">Nmap, short for Network Mapper, is an open source tool for network discovery and security auditing.</p>
+                        <a class="link-btn" href="https://khalidfatur.blogspot.com/2021/12/keamanan-jaringan.html" target="_blank" rel="noopener noreferrer" data-i18n="blog.read">Read more</a>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <img class="card-media" src="ASSET/blog/blog2.png" alt="Network monitoring article cover" loading="lazy">
+                    <div class="card-body">
+                        <h3>Konfigurasi Monitoring Jaringan</h3>
+                        <p data-i18n="b2.desc">A network monitoring system tracks the activity of devices on a network.</p>
+                        <a class="link-btn" href="https://khalidfatur.blogspot.com/2021/12/konfigurasi-monitoring-jaringan.html" target="_blank" rel="noopener noreferrer" data-i18n="blog.read">Read more</a>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <img class="card-media" src="ASSET/blog/blog3.png" alt="Proxmox installation article cover" loading="lazy">
+                    <div class="card-body">
+                        <h3>Installasi Proxmox VMware Workstation Player dan membangun VPS</h3>
+                        <p data-i18n="b3.desc">This article covers how to install Proxmox on VMware and build a VPS.</p>
+                        <a class="link-btn" href="https://khalidfatur.blogspot.com/2021/08/installasi-proxmox-vmware-worksatation.html" target="_blank" rel="noopener noreferrer" data-i18n="blog.read">Read more</a>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <img class="card-media" src="ASSET/blog/blog4.png" alt="Shared hosting article cover" loading="lazy">
+                    <div class="card-body">
+                        <h3>Konfigurasi Share Hosting pada Debian dan Installasi Wordpress</h3>
+                        <p data-i18n="b4.desc">Hosting is the service of renting internet servers for websites and email.</p>
+                        <a class="link-btn" href="https://khalidfatur.blogspot.com/2021/08/konfigurasi-share-hosting-pada-debian.html" target="_blank" rel="noopener noreferrer" data-i18n="blog.read">Read more</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container" id="contact">
+            <div class="section-head reveal">
+                <p class="eyebrow" data-i18n="contact.eyebrow">Let's talk</p>
+                <h2 data-i18n="contact.title">Contact</h2>
+                <p class="sub" data-i18n="contact.sub">Have a project, an opportunity or just a question? Send me a message.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="panel reveal">
+                    <h3 data-i18n="contact.info">Contact information</h3>
+                    <ul class="contact-list">
+                        <li><img src="ASSET/sosial-media/Mail.png" alt="" loading="lazy"><a href="mailto:khalidfr87@gmail.com">khalidfr87@gmail.com</a></li>
+                        <li><img src="ASSET/sosial-media/WhatsApp.png" alt="" loading="lazy"><a href="https://wa.me/6288291380948" target="_blank" rel="noopener noreferrer">+62 882-9138-0948</a></li>
+                        <li><img src="ASSET/sosial-media/Line.png" alt="" loading="lazy"><span>Kimung16</span></li>
+                    </ul>
+
+                    <h3 data-i18n="contact.follow">Follow me</h3>
+                    <ul class="social-list">
+                        <li><a href="https://github.com/Khalidfatur87" target="_blank" rel="noopener noreferrer"><img src="ASSET/sosial-media/Github.png" alt="" loading="lazy">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/khalid-fatur-rahman-31b90b279/" target="_blank" rel="noopener noreferrer"><img src="ASSET/sosial-media/LinkedIN.png" alt="" loading="lazy">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/khalidfatur_r/" target="_blank" rel="noopener noreferrer"><img src="ASSET/sosial-media/Instagram.png" alt="" loading="lazy">Instagram</a></li>
+                        <li><a href="https://khalidfatur.blogspot.com/" target="_blank" rel="noopener noreferrer"><img src="ASSET/sosial-media/Blogger.png" alt="" loading="lazy">Blogger</a></li>
+                    </ul>
+                </div>
+
+                <form class="panel form reveal" id="contact-form" novalidate>
+                    <label>
+                        <span data-i18n="form.name">Name</span>
+                        <input type="text" name="name" autocomplete="name" required>
+                    </label>
+                    <label>
+                        <span data-i18n="form.email">Email</span>
+                        <input type="email" name="email" autocomplete="email" required>
+                    </label>
+                    <label>
+                        <span data-i18n="form.message">Message</span>
+                        <textarea name="message" rows="5" required></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-primary" data-i18n="form.send">Send message</button>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="year">2026</span> Khalid Fatur Rahman. <span data-i18n="footer.rights">All rights reserved.</span></p>
+            <a href="#home" data-i18n="footer.top">Back to top</a>
+        </div>
+    </footer>
+
+    <dialog class="dialog" id="cert-dialog" aria-labelledby="cert-caption">
+        <form method="dialog">
+            <button type="submit" class="dialog-close" aria-label="Close">&times;</button>
+        </form>
+        <img id="cert-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Certificate preview">
+        <p id="cert-caption"></p>
+    </dialog>
+
+    <script src="JS/script.js"></script>
+</body>
+
+</html>
