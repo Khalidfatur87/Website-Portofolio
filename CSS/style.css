@@ -1102,6 +1102,12 @@ ul {
     translate: none;
 }
 
+@media (min-width: 861px) {
+    .pcard-shot.pcard-wide {
+        grid-column: span 3;
+    }
+}
+
 @media (max-width: 860px) {
     .hero {
         grid-template-columns: 1fr;

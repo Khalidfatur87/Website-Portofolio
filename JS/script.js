@@ -99,7 +99,8 @@ const translations = {
         'form.message': 'Pesan',
         'form.send': 'Kirim pesan',
         'footer.rights': 'Hak cipta dilindungi.',
-        'footer.top': 'Kembali ke atas'
+        'footer.top': 'Kembali ke atas',
+        'dialog.close': 'Tutup'
     }
 };
 
@@ -162,12 +163,21 @@ i18nNodes.forEach((node) => {
     node.dataset.en = node.textContent;
 });
 
+const i18nLabelNodes = document.querySelectorAll('[data-i18n-label]');
+i18nLabelNodes.forEach((node) => {
+    node.dataset.enLabel = node.getAttribute('aria-label') || '';
+});
+
 function applyLang(lang) {
     currentLang = lang;
     root.lang = lang;
     i18nNodes.forEach((node) => {
         const translated = lang === 'id' ? translations.id[node.dataset.i18n] : null;
         node.textContent = translated || node.dataset.en;
+    });
+    i18nLabelNodes.forEach((node) => {
+        const translated = lang === 'id' ? translations.id[node.dataset.i18nLabel] : null;
+        node.setAttribute('aria-label', translated || node.dataset.enLabel);
     });
     langToggle.textContent = lang === 'id' ? 'EN' : 'ID';
     langToggle.setAttribute('aria-label', lang === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia');
@@ -249,6 +259,17 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const chips = document.querySelectorAll('.chip');
 const projects = document.querySelectorAll('#project-grid .project');
 
+function balanceShots() {
+    const shots = document.querySelectorAll('#project-grid .pcard-shot');
+    const visible = [...shots].filter((card) => !card.hidden);
+    shots.forEach((card) => card.classList.remove('pcard-wide'));
+    if (visible.length % 3 === 2) {
+        visible.slice(-2).forEach((card) => card.classList.add('pcard-wide'));
+    }
+}
+
+balanceShots();
+
 chips.forEach((chip) => {
     chip.addEventListener('click', () => {
         const filter = chip.dataset.filter;
@@ -268,6 +289,7 @@ chips.forEach((chip) => {
                 );
             }
         });
+        balanceShots();
     });
 });
 
