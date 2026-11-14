@@ -245,6 +245,7 @@ if ('IntersectionObserver' in window) {
     revealNodes.forEach((node) => node.classList.add('in'));
 }
 
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const chips = document.querySelectorAll('.chip');
 const projects = document.querySelectorAll('#project-grid .project');
 
@@ -257,8 +258,24 @@ chips.forEach((chip) => {
             other.setAttribute('aria-pressed', String(active));
         });
         projects.forEach((card) => {
-            card.hidden = filter !== 'all' && card.dataset.category !== filter;
+            const hide = filter !== 'all' && card.dataset.category !== filter;
+            const wasHidden = card.hidden;
+            card.hidden = hide;
+            if (!hide && wasHidden && !reduceMotion.matches && card.animate) {
+                card.animate(
+                    [{ opacity: 0, transform: 'translateY(14px) scale(0.98)' }, { opacity: 1, transform: 'none' }],
+                    { duration: 380, easing: 'cubic-bezier(.2,.7,.2,1)' }
+                );
+            }
         });
+    });
+});
+
+projects.forEach((card) => {
+    card.addEventListener('pointermove', (event) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (event.clientX - rect.left) + 'px');
+        card.style.setProperty('--my', (event.clientY - rect.top) + 'px');
     });
 });
 
