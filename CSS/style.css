@@ -335,11 +335,8 @@ ul {
     color: var(--muted);
 }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 3rem;
-    align-items: start;
+.about-text {
+    max-width: 760px;
 }
 
 .about-text p {
@@ -378,63 +375,116 @@ ul {
     font-size: 0.85rem;
 }
 
-.skills h3,
 .panel h3 {
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
 
-.skill-list {
+.skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
 }
 
-.skill-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    padding: 0.65rem 0.8rem;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: var(--surface);
-    font-size: 0.92rem;
-    font-weight: 500;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.skill-list li:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent);
-}
-
-.skill-icon {
-    display: grid;
-    place-items: center;
-    flex: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 9px;
-    background: #ffffff;
-}
-
-.skill-icon img {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
-}
-
-.skill-label {
-    margin: 1.5rem 0 0.75rem;
+.sub-head {
+    margin-bottom: 1.5rem;
     color: var(--muted);
     font-family: var(--mono);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
 
-.skills h3 + .skill-label {
-    margin-top: 0;
+.sub-head:not(:first-of-type) {
+    margin-top: 3.5rem;
+}
+
+.timeline {
+    position: relative;
+    display: grid;
+    gap: 1.5rem;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    left: 0.45rem;
+    width: 2px;
+    background: var(--border);
+}
+
+.t-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
+.t-item::before {
+    content: "";
+    position: absolute;
+    top: 1.9rem;
+    left: calc(-2rem + 0.45rem - 5px);
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    background: var(--bg);
+}
+
+.t-item:first-child::before {
+    background: var(--accent);
+}
+
+.t-item h3 {
+    font-size: 1.2rem;
+    line-height: 1.35;
+}
+
+.t-meta {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.bullets {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0.5rem 0;
+}
+
+.bullets li {
+    position: relative;
+    padding-left: 1.2rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.bullets li::before {
+    content: "";
+    position: absolute;
+    top: 0.7em;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.highlight {
+    color: var(--accent-text);
+    font-weight: 600;
+}
+
+.hero-stack {
+    margin-top: 1.25rem;
 }
 
 .tech-list {
@@ -462,13 +512,13 @@ ul {
     margin-top: 0.5rem;
 }
 
-.card-body .tech-list li {
+.card-body .tech-list li,
+.t-item .tech-list li {
     background: var(--surface-2);
 }
 
-.card.wide {
-    grid-column: 1 / -1;
-    border-left: 3px solid var(--accent);
+.card.work {
+    border-top: 3px solid var(--accent);
 }
 
 .card-grid {
@@ -834,10 +884,18 @@ ul {
         justify-content: center;
     }
 
-    .about-grid,
+    .hero-stack {
+        justify-content: center;
+    }
+
+    .about-text {
+        margin-inline: auto;
+    }
+
+    .skills-grid,
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .menu-btn {
@@ -878,6 +936,26 @@ ul {
 
     .stats {
         gap: 0.6rem;
+    }
+
+    .stats li {
+        padding: 0.8rem 0.4rem;
+    }
+
+    .timeline {
+        padding-left: 1.5rem;
+    }
+
+    .timeline::before {
+        left: 0.2rem;
+    }
+
+    .t-item {
+        padding: 1.25rem;
+    }
+
+    .t-item::before {
+        left: calc(-1.5rem + 0.2rem - 5px);
     }
 
     .panel {

@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khalid Fatur Rahman - Software Engineering Graduate and Web Developer</title>
-    <meta name="description" content="Portfolio of Khalid Fatur Rahman, a Software Engineering graduate of Binus University and web developer intern at PT JAPFA Comfeed Indonesia Tbk.">
+    <title>Khalid Fatur Rahman - Fullstack Developer</title>
+    <meta name="description" content="Portfolio of Khalid Fatur Rahman, a Software Engineering graduate of Binus University and freelance fullstack developer at PT JAPFA Comfeed Indonesia Tbk, building backend services, APIs and dashboards.">
     <meta name="theme-color" content="#0b0f14">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Khalid Fatur Rahman - Software Engineering Graduate and Web Developer">
-    <meta property="og:description" content="Projects, experience and writing from a Software Engineering graduate and web developer.">
+    <meta property="og:url" content="https://website-portofolio-amber.vercel.app/">
+    <meta property="og:title" content="Khalid Fatur Rahman - Fullstack Developer and Software Engineering Graduate">
+    <meta property="og:description" content="Projects, experience and writing from a fullstack developer working with Oracle APEX, Flask, Node.js and NestJS.">
+    <meta property="og:image" content="https://website-portofolio-amber.vercel.app/ASSET/foto/foto.png">
+    <meta name="twitter:card" content="summary">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2334d399'/%3E%3Ctext x='32' y='45' font-size='36' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%2304210f'%3EK%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,8 +42,10 @@
 
             <ul class="nav-links" id="nav-links">
                 <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
                 <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
                 <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#education" data-i18n="nav.education">Education</a></li>
                 <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
@@ -70,11 +75,20 @@
             <div class="hero-text">
                 <p class="eyebrow" data-i18n="hero.hello">Hello, I'm</p>
                 <h1>Khalid Fatur <span class="grad">Rahman</span></h1>
-                <p class="role" data-i18n="hero.role">Software Engineering graduate from Binus University</p>
-                <p class="lead" data-i18n="hero.lead">Web Developer Intern at PT JAPFA Comfeed Indonesia Tbk. I build web applications with Node.js, Flask and Oracle APEX on top of Oracle Database and PostgreSQL.</p>
+                <p class="role" data-i18n="hero.role">Fullstack Developer and Software Engineering graduate from Binus University</p>
+                <p class="lead" data-i18n="hero.lead">Freelance Fullstack Developer at PT JAPFA Comfeed Indonesia Tbk, after a year as a Web Developer Intern. I build backend services, RESTful APIs and internal dashboards.</p>
+                <ul class="tech-list hero-stack">
+                    <li>Oracle APEX</li>
+                    <li>Flask</li>
+                    <li>Node.js</li>
+                    <li>NestJS</li>
+                    <li>PostgreSQL</li>
+                </ul>
                 <div class="cta">
                     <a class="btn btn-primary" href="ASSET/CV - Khalid Fatur Rahman.pdf" download="CV Khalid Fatur Rahman" data-i18n="hero.cv">Download CV</a>
                     <a class="btn btn-ghost" href="#contact" data-i18n="hero.contact">Get in touch</a>
+                    <a class="btn btn-ghost" href="https://github.com/Khalidfatur87" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a class="btn btn-ghost" href="https://www.linkedin.com/in/khalid-fatur-rahman/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </div>
             <div class="hero-photo">
@@ -88,40 +102,70 @@
                 <h2 data-i18n="about.title">About me</h2>
             </div>
 
-            <div class="about-grid">
-                <div class="about-text reveal">
-                    <p data-i18n="about.p1">I am a Software Engineering graduate of Binus University with a GPA of 3.48. I have high enthusiasm and dedication in developing technical skills and knowledge in the field of technology. I have studied various programming languages such as C++, Java, JavaScript, and Python, and have expertise in designing scalable, maintainable, and user-friendly application systems.</p>
-                    <p data-i18n="about.p2">I am experienced in building websites, covering front-end and back-end aspects, and I currently work as a web developer intern at PT JAPFA Comfeed Indonesia Tbk using Node.js, Flask and Oracle APEX. I believe that technology can change the world for the better, and I am committed to contributing to that change.</p>
+            <div class="about-text reveal">
+                <p data-i18n="about.p1">I am a Software Engineering graduate of Binus University (GPA 3.48) with nearly two years at PT JAPFA Comfeed Indonesia Tbk, first as a Web Developer Intern and now as a freelance fullstack developer.</p>
+                <p data-i18n="about.p2">I build internal finance dashboards with Oracle APEX and PL/SQL, RESTful APIs with Python (Flask), and backend services with Node.js and PostgreSQL. I also bring student organization leadership and a 3rd-place finish in an international UI/UX competition.</p>
 
-                    <ul class="stats">
-                        <li><strong>3.48</strong><span data-i18n="about.gpa">GPA</span></li>
-                        <li><strong>5</strong><span data-i18n="about.projects">Projects</span></li>
-                        <li><strong>5</strong><span data-i18n="about.experience">Experiences</span></li>
+                <ul class="stats">
+                    <li><strong>~2</strong><span data-i18n="about.years">Years at JAPFA</span></li>
+                    <li><strong>4</strong><span data-i18n="about.projects">Professional projects</span></li>
+                    <li><strong>3.48</strong><span data-i18n="about.gpa">GPA</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section container" id="skills">
+            <div class="section-head reveal">
+                <p class="eyebrow" data-i18n="skills.eyebrow">What I work with</p>
+                <h2 data-i18n="skills.title">Skills</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="panel reveal">
+                    <h3 data-i18n="skills.languages">Programming languages</h3>
+                    <ul class="tech-list">
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>SQL</li>
+                        <li>PL/SQL</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
                     </ul>
                 </div>
-
-                <div class="skills reveal">
-                    <h3 data-i18n="skills.title">Tools and skills</h3>
-                    <p class="skill-label" data-i18n="skills.frontend">Frontend and tools</p>
-                    <ul class="skill-list">
-                        <li><span class="skill-icon"><img src="ASSET/icon/Figma.png" alt="" loading="lazy"></span>Figma</li>
-                        <li><span class="skill-icon"><img src="ASSET/icon/VSCode.png" alt="" loading="lazy"></span>VSCode</li>
-                        <li><span class="skill-icon"><img src="ASSET/icon/Js.png" alt="" loading="lazy"></span>JavaScript</li>
-                        <li><span class="skill-icon"><img src="ASSET/icon/Python.png" alt="" loading="lazy"></span>Python</li>
-                        <li><span class="skill-icon"><img src="ASSET/icon/c++.png" alt="" loading="lazy"></span>C++</li>
-                        <li><span class="skill-icon"><img src="ASSET/icon/html.png" alt="" loading="lazy"></span>HTML</li>
-                        <li><span class="skill-icon"><img src="ASSET/icon/css.png" alt="" loading="lazy"></span>CSS</li>
-                    </ul>
-                    <p class="skill-label" data-i18n="skills.backend">Backend</p>
+                <div class="panel reveal">
+                    <h3 data-i18n="skills.frameworks">Frameworks and platforms</h3>
                     <ul class="tech-list">
-                        <li>Node.js</li>
+                        <li>Nuxt.js</li>
+                        <li>NestJS</li>
                         <li>Flask</li>
+                        <li>Node.js</li>
+                        <li>React.js</li>
                         <li>Oracle APEX</li>
                     </ul>
-                    <p class="skill-label" data-i18n="skills.database">Database</p>
+                </div>
+                <div class="panel reveal">
+                    <h3 data-i18n="skills.databases">Databases</h3>
                     <ul class="tech-list">
                         <li>Oracle Database</li>
                         <li>PostgreSQL</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
+                <div class="panel reveal">
+                    <h3 data-i18n="skills.tools">Tools</h3>
+                    <ul class="tech-list">
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>Docker</li>
+                        <li>Jenkins</li>
+                        <li>Postman</li>
+                        <li>Vitest</li>
+                        <li>Katalon</li>
+                        <li>Selenium</li>
+                        <li>Figma</li>
+                        <li>VSCode</li>
                     </ul>
                 </div>
             </div>
@@ -129,28 +173,60 @@
 
         <section class="section container" id="experience">
             <div class="section-head reveal">
-                <p class="eyebrow" data-i18n="exp.eyebrow">Experience and organizations</p>
+                <p class="eyebrow" data-i18n="exp.eyebrow">Career and leadership</p>
                 <h2 data-i18n="exp.title">Experience</h2>
-                <p class="sub" data-i18n="exp.sub">My professional experience, organizations and achievements.</p>
+                <p class="sub" data-i18n="exp.sub">My professional work and student organizations.</p>
             </div>
 
-            <div class="card-grid">
-                <article class="card wide reveal">
-                    <div class="card-body">
-                        <p class="meta tag" data-i18n="exp0.tag">Internship</p>
-                        <p class="meta">PT JAPFA Comfeed Indonesia Tbk · Feb 2026 - Feb 2027</p>
-                        <h3>Web Developer Intern</h3>
-                        <p data-i18n="exp0.desc">One-year internship as a web developer, building web applications with Node.js, Flask and Oracle APEX on top of Oracle Database and PostgreSQL.</p>
-                        <ul class="tech-list">
-                            <li>Node.js</li>
-                            <li>Flask</li>
-                            <li>Oracle APEX</li>
-                            <li>Oracle Database</li>
-                            <li>PostgreSQL</li>
-                        </ul>
-                    </div>
+            <h3 class="sub-head reveal" data-i18n="exp.work">Professional experience</h3>
+            <div class="timeline">
+                <article class="t-item reveal">
+                    <p class="meta tag" data-i18n="exp0.tag">Freelance</p>
+                    <h3>Freelance Fullstack Developer</h3>
+                    <p class="t-meta">PT JAPFA Comfeed Indonesia Tbk · <span data-i18n="exp0.date">Feb 2026 - Present</span></p>
+                    <ul class="bullets">
+                        <li data-i18n="exp0.b1">Floxx (livestock management app): optimize backend performance with Redis, debug issues across the application, and help develop the offline-mode data synchronization mechanism.</li>
+                        <li data-i18n="exp0.b2">Write unit tests with Vitest and run functional testing with Katalon to keep Floxx releases stable.</li>
+                        <li data-i18n="exp0.b3">VMS ONE (visitor management system): build and maintain the platform with Nuxt.js and NestJS, applying the AI-Driven Development Lifecycle (AI-DLC) throughout development.</li>
+                        <li data-i18n="exp0.b4">Implement CI/CD pipelines with Jenkins and Docker to automate builds and deployments.</li>
+                    </ul>
+                    <ul class="tech-list">
+                        <li>Nuxt.js</li>
+                        <li>NestJS</li>
+                        <li>Node.js</li>
+                        <li>Redis</li>
+                        <li>Vitest</li>
+                        <li>Katalon</li>
+                        <li>Jenkins</li>
+                        <li>Docker</li>
+                    </ul>
                 </article>
 
+                <article class="t-item reveal">
+                    <p class="meta tag" data-i18n="exp5.tag">Internship</p>
+                    <h3>Web Developer Intern</h3>
+                    <p class="t-meta">PT JAPFA Comfeed Indonesia Tbk · <span data-i18n="exp5.date">Feb 2025 - Feb 2026</span></p>
+                    <ul class="bullets">
+                        <li data-i18n="exp5.b1">BCA Host-to-Host (H2H) Integration: built the internal finance monitoring dashboard in Oracle APEX, powered by complex SQL queries and PL/SQL blocks that retrieve, filter, and process transaction data from Oracle Database.</li>
+                        <li data-i18n="exp5.b2">Automated reconciliation reports for the finance team, reducing manual reconciliation work.</li>
+                        <li data-i18n="exp5.b3">Japfa for Kids (CSR education platform): designed the ERD and PostgreSQL schema, and built RESTful APIs in Python (Flask) with offline sync to keep data consistent when devices reconnect.</li>
+                        <li data-i18n="exp5.b4">Optimized database performance for scalable user activity and efficient data retrieval.</li>
+                        <li data-i18n="exp5.b5">Floxx (livestock management app): built modular backend services with Node.js and PostgreSQL, and tested and debugged APIs with Postman to reduce bugs reaching production.</li>
+                    </ul>
+                    <ul class="tech-list">
+                        <li>Oracle APEX</li>
+                        <li>PL/SQL</li>
+                        <li>Oracle Database</li>
+                        <li>Flask</li>
+                        <li>PostgreSQL</li>
+                        <li>Node.js</li>
+                        <li>Postman</li>
+                    </ul>
+                </article>
+            </div>
+
+            <h3 class="sub-head reveal" data-i18n="exp.orgs">Organizations and leadership</h3>
+            <div class="card-grid">
                 <article class="card reveal">
                     <img class="card-media" src="ASSET/experience/fl.jpeg" alt="Freshmen Leader activity" loading="lazy">
                     <div class="card-body">
@@ -175,19 +251,9 @@
                     <img class="card-media" src="ASSET/experience/ketua.jpeg" alt="Badminton club activity" loading="lazy">
                     <div class="card-body">
                         <p class="meta">Binus University · 6 Jan 2024 - 14 Dec 2024</p>
-                        <h3>Chairman of Badminton Binus Bekasi</h3>
-                        <p data-i18n="exp3.desc">Organized regular training sessions, coordinated the board and members, and kept club operations running smoothly.</p>
-                        <button type="button" class="link-btn" data-cert="ASSET/sertif/sertif-chairman.jpeg" data-title="Chairman of Badminton Binus Bekasi" data-i18n="exp.view">View certificate</button>
-                    </div>
-                </article>
-
-                <article class="card reveal">
-                    <img class="card-media" src="ASSET/experience/basic.jpeg" alt="BASIC UI/UX competition" loading="lazy">
-                    <div class="card-body">
-                        <p class="meta">BASIC · 14 Jun 2023 - 31 Aug 2023</p>
-                        <h3>3rd Winner UI/UX Competition</h3>
-                        <p data-i18n="exp4.desc">Won 3rd place in an international UI/UX competition held by Binus, designing the UI/UX and building the system.</p>
-                        <button type="button" class="link-btn" data-cert="ASSET/sertif/sertif-basic.jpeg" data-title="3rd Winner UI/UX Competition" data-i18n="exp.view">View certificate</button>
+                        <h3>Regional Chair, Binus Badminton Bekasi</h3>
+                        <p data-i18n="exp3.desc">Led the Bekasi regional chapter and coordinated all regional activities. Led Binus Badminton Cup 2024, a national tournament, chaired the 2024 anniversary event and internal competition, and organized a benchmarking visit with Esa Unggul University Bekasi.</p>
+                        <button type="button" class="link-btn" data-cert="ASSET/sertif/sertif-chairman.jpeg" data-title="Regional Chair, Binus Badminton Bekasi" data-i18n="exp.view">View certificate</button>
                     </div>
                 </article>
             </div>
@@ -201,12 +267,72 @@
 
             <div class="filters reveal" role="group" aria-label="Project filter">
                 <button type="button" class="chip is-active" data-filter="all" aria-pressed="true" data-i18n="filter.all">All</button>
+                <button type="button" class="chip" data-filter="work" aria-pressed="false" data-i18n="filter.work">Professional</button>
                 <button type="button" class="chip" data-filter="web" aria-pressed="false" data-i18n="filter.web">Web</button>
                 <button type="button" class="chip" data-filter="design" aria-pressed="false" data-i18n="filter.design">UI/UX</button>
                 <button type="button" class="chip" data-filter="network" aria-pressed="false" data-i18n="filter.network">Networking</button>
             </div>
 
             <div class="card-grid" id="project-grid">
+                <article class="card project work reveal" data-category="work">
+                    <div class="card-body">
+                        <p class="meta tag" data-i18n="proj.pro">Professional</p>
+                        <p class="meta">PT JAPFA Comfeed Indonesia Tbk · <span data-i18n="wp2.date">Feb 2026 - Present</span></p>
+                        <h3>VMS ONE</h3>
+                        <p data-i18n="wp2.desc">Visitor management system built and maintained with Nuxt.js and NestJS, developed with the AI-Driven Development Lifecycle (AI-DLC) and shipped through CI/CD pipelines with Jenkins and Docker.</p>
+                        <ul class="tech-list">
+                            <li>Nuxt.js</li>
+                            <li>NestJS</li>
+                            <li>Jenkins</li>
+                            <li>Docker</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card project work reveal" data-category="work">
+                    <div class="card-body">
+                        <p class="meta tag" data-i18n="proj.pro">Professional</p>
+                        <p class="meta">PT JAPFA Comfeed Indonesia Tbk · <span data-i18n="wp1.date">Feb 2025 - Present</span></p>
+                        <h3>Floxx</h3>
+                        <p data-i18n="wp1.desc">Livestock management app. Built modular backend services with Node.js and PostgreSQL, optimized performance with Redis, helped develop offline-mode data sync, and kept releases stable with Postman, Vitest and Katalon testing.</p>
+                        <ul class="tech-list">
+                            <li>Node.js</li>
+                            <li>PostgreSQL</li>
+                            <li>Redis</li>
+                            <li>Vitest</li>
+                            <li>Katalon</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card project work reveal" data-category="work">
+                    <div class="card-body">
+                        <p class="meta tag" data-i18n="proj.pro">Professional</p>
+                        <p class="meta">PT JAPFA Comfeed Indonesia Tbk · Feb 2025 - Feb 2026</p>
+                        <h3>BCA H2H Finance Dashboard</h3>
+                        <p data-i18n="wp3.desc">Internal finance monitoring dashboard for BCA Host-to-Host integration, built in Oracle APEX with complex SQL and PL/SQL over Oracle Database. Includes automated reconciliation reports that reduce manual work for the finance team.</p>
+                        <ul class="tech-list">
+                            <li>Oracle APEX</li>
+                            <li>PL/SQL</li>
+                            <li>Oracle Database</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card project work reveal" data-category="work">
+                    <div class="card-body">
+                        <p class="meta tag" data-i18n="proj.pro">Professional</p>
+                        <p class="meta">PT JAPFA Comfeed Indonesia Tbk · Feb 2025 - Feb 2026</p>
+                        <h3>Japfa for Kids</h3>
+                        <p data-i18n="wp4.desc">CSR education platform. Designed the ERD and PostgreSQL schema, built RESTful APIs in Python (Flask) with offline sync for data consistency when devices reconnect, and optimized database performance for growing usage.</p>
+                        <ul class="tech-list">
+                            <li>Flask</li>
+                            <li>PostgreSQL</li>
+                            <li>REST API</li>
+                        </ul>
+                    </div>
+                </article>
+
                 <article class="card project reveal" data-category="web">
                     <img class="card-media contain" src="ASSET/porto/JeniusAcademy.png" alt="JeniusAcademy website preview" loading="lazy">
                     <div class="card-body">
@@ -254,6 +380,55 @@
                         <h3>System Design For UI/UX Competition</h3>
                         <p data-i18n="p5.desc">In the UI/UX competition I helped build the system by creating the use case and activity diagrams.</p>
                         <a class="link-btn" href="https://drive.google.com/drive/folders/1ctBTx9ZnwGIwZVI1TY7ZWEg4zdsSZaHT?usp=sharing" target="_blank" rel="noopener noreferrer" data-i18n="proj.view">View project</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container" id="education">
+            <div class="section-head reveal">
+                <p class="eyebrow" data-i18n="edu.eyebrow">Background</p>
+                <h2 data-i18n="edu.title">Education and achievements</h2>
+            </div>
+
+            <h3 class="sub-head reveal" data-i18n="edu.heading">Education</h3>
+            <div class="card-grid two">
+                <article class="card reveal">
+                    <div class="card-body">
+                        <p class="meta">Sep 2022 - Sep 2026</p>
+                        <h3>Binus University</h3>
+                        <p data-i18n="edu1.desc">Bachelor of Computer Science (S.Kom), Software Engineering</p>
+                        <p class="highlight" data-i18n="edu1.gpa">GPA 3.48 / 4.00</p>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <div class="card-body">
+                        <p class="meta">Sep 2019 - Sep 2022</p>
+                        <h3>SMKN 1 Kota Bekasi</h3>
+                        <p data-i18n="edu2.desc">Computer and Network Engineering</p>
+                    </div>
+                </article>
+            </div>
+
+            <h3 class="sub-head reveal" data-i18n="edu.ach">Achievements</h3>
+            <div class="card-grid two">
+                <article class="card reveal">
+                    <img class="card-media" src="ASSET/experience/basic.jpeg" alt="BASIC UI/UX competition" loading="lazy">
+                    <div class="card-body">
+                        <p class="meta">BASIC · 14 Jun 2023 - 31 Aug 2023</p>
+                        <h3>3rd Winner UI/UX Competition</h3>
+                        <p data-i18n="exp4.desc">Won 3rd place in an international UI/UX competition held by Binus, designing the UI/UX and building the system.</p>
+                        <button type="button" class="link-btn" data-cert="ASSET/sertif/sertif-basic.jpeg" data-title="3rd Winner UI/UX Competition" data-i18n="exp.view">View certificate</button>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <div class="card-body">
+                        <p class="meta tag" data-i18n="ach2.tag">Award</p>
+                        <p class="meta">Binus University · 2024</p>
+                        <h3>Outstanding Student 2024</h3>
+                        <p data-i18n="ach2.desc">Recognized as an Outstanding Student (Mahasiswa Berprestasi) for contributions to Binus University.</p>
                     </div>
                 </article>
             </div>
@@ -324,7 +499,7 @@
                     <h3 data-i18n="contact.follow">Follow me</h3>
                     <ul class="social-list">
                         <li><a href="https://github.com/Khalidfatur87" target="_blank" rel="noopener noreferrer"><img src="ASSET/sosial-media/Github.png" alt="" loading="lazy">GitHub</a></li>
-                        <li><a href="https://www.linkedin.com/in/khalid-fatur-rahman-31b90b279/" target="_blank" rel="noopener noreferrer"><img src="ASSET/sosial-media/LinkedIN.png" alt="" loading="lazy">LinkedIn</a></li>
+                        <li><a href="https://www.linkedin.com/in/khalid-fatur-rahman/" target="_blank" rel="noopener noreferrer"><img src="ASSET/sosial-media/LinkedIN.png" alt="" loading="lazy">LinkedIn</a></li>
                         <li><a href="https://www.instagram.com/khalidfatur_r/" target="_blank" rel="noopener noreferrer"><img src="ASSET/sosial-media/Instagram.png" alt="" loading="lazy">Instagram</a></li>
                         <li><a href="https://khalidfatur.blogspot.com/" target="_blank" rel="noopener noreferrer"><img src="ASSET/sosial-media/Blogger.png" alt="" loading="lazy">Blogger</a></li>
                     </ul>
