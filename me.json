@@ -1,0 +1,37 @@
+{
+  "name": "Khalid Fatur Rahman",
+  "role": "Fullstack Developer",
+  "current": {
+    "title": "Freelance Fullstack Developer",
+    "company": "PT JAPFA Comfeed Indonesia Tbk",
+    "since": "2026-02",
+    "projects": ["VMS ONE", "Floxx"]
+  },
+  "previous": [
+    {
+      "title": "Web Developer Intern",
+      "company": "PT JAPFA Comfeed Indonesia Tbk",
+      "from": "2025-02",
+      "to": "2026-02",
+      "projects": ["BCA H2H Finance Dashboard", "Japfa for Kids", "Floxx"]
+    }
+  ],
+  "focus": ["backend", "REST APIs", "offline sync", "internal dashboards"],
+  "stack": {
+    "languages": ["Python", "JavaScript", "Java", "C++", "SQL", "PL/SQL"],
+    "frameworks": ["Nuxt.js", "NestJS", "Flask", "Node.js", "React.js", "Oracle APEX"],
+    "databases": ["Oracle Database", "PostgreSQL", "Redis"],
+    "tools": ["Git", "Docker", "Jenkins", "Postman", "Vitest", "Katalon", "Selenium", "Figma"]
+  },
+  "education": {
+    "degree": "S.Kom, Software Engineering",
+    "school": "Binus University",
+    "gpa": 3.48
+  },
+  "links": {
+    "portfolio": "https://website-portofolio-amber.vercel.app/",
+    "github": "https://github.com/Khalidfatur87",
+    "linkedin": "https://www.linkedin.com/in/khalid-fatur-rahman/",
+    "email": "khalidfr87@gmail.com"
+  }
+}

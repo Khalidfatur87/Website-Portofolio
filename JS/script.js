@@ -16,6 +16,17 @@ const translations = {
         'hero.lead': 'Freelance Fullstack Developer di PT JAPFA Comfeed Indonesia Tbk, setelah satu tahun sebagai Web Developer Intern. Saya membangun layanan backend, RESTful API, dan dashboard internal.',
         'hero.cv': 'Unduh CV',
         'hero.contact': 'Hubungi saya',
+        'hero.now': 'Saat ini',
+        'hero.nowWork': 'Mengerjakan VMS ONE dan Floxx',
+        'hero.json': 'Buka JSON mentah',
+        'hero.stack': 'Stack harian',
+        'cmdk.open': 'Buka menu perintah',
+        'cmdk.input': 'Ketik perintah',
+        'cmdk.email': 'Salin alamat email',
+        'cmdk.theme': 'Ganti tema',
+        'cmdk.lang': 'Ganti bahasa',
+        'cmdk.empty': 'Tidak ada perintah yang cocok.',
+        'cmdk.copied': 'Email disalin ke clipboard.',
         'about.eyebrow': 'Kenali lebih jauh',
         'about.title': 'Tentang saya',
         'about.p1': 'Saya lulusan Ilmu Komputer (Software Engineering) Binus University dengan IPK 3,48 dan hampir dua tahun di PT JAPFA Comfeed Indonesia Tbk, dari Web Developer Intern hingga kini freelance fullstack developer.',
@@ -155,6 +166,7 @@ themeToggle.addEventListener('click', () => {
     writeStore('theme', next);
 });
 
+const cmdkInput = document.getElementById('cmdk-input');
 const i18nNodes = document.querySelectorAll('[data-i18n]');
 const langToggle = document.getElementById('lang-toggle');
 let currentLang = 'en';
@@ -179,6 +191,7 @@ function applyLang(lang) {
         const translated = lang === 'id' ? translations.id[node.dataset.i18nLabel] : null;
         node.setAttribute('aria-label', translated || node.dataset.enLabel);
     });
+    cmdkInput.placeholder = lang === 'id' ? 'Ketik perintah atau bagian...' : 'Type a command or section...';
     langToggle.textContent = lang === 'id' ? 'EN' : 'ID';
     langToggle.setAttribute('aria-label', lang === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia');
 }
@@ -380,3 +393,196 @@ form.addEventListener('input', (event) => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+const term = document.getElementById('term');
+
+if (term && !reduceMotion.matches) {
+    const walker = document.createTreeWalker(term, NodeFilter.SHOW_TEXT);
+    const pieces = [];
+    while (walker.nextNode()) {
+        pieces.push({ node: walker.currentNode, text: walker.currentNode.nodeValue });
+    }
+    pieces.forEach((piece) => {
+        piece.node.nodeValue = '';
+    });
+    term.classList.add('typing');
+
+    let index = 0;
+    let offset = 0;
+    let commandDone = false;
+    const typeNext = () => {
+        if (index >= pieces.length) {
+            setTimeout(() => term.classList.remove('typing'), 2400);
+            return;
+        }
+        const piece = pieces[index];
+        offset = Math.min(offset + (commandDone ? 3 : 1), piece.text.length);
+        piece.node.nodeValue = piece.text.slice(0, offset);
+        let pause = commandDone ? 12 : 60;
+        if (offset >= piece.text.length) {
+            if (!commandDone && piece.text.includes('\n')) {
+                commandDone = true;
+                pause = 500;
+            }
+            index += 1;
+            offset = 0;
+        }
+        setTimeout(typeNext, pause);
+    };
+    setTimeout(typeNext, 500);
+}
+
+const timeline = document.querySelector('.timeline');
+
+if (timeline) {
+    let ticking = false;
+    const updateProgress = () => {
+        const rect = timeline.getBoundingClientRect();
+        const anchor = window.innerHeight * 0.6;
+        const progress = Math.min(Math.max((anchor - rect.top) / rect.height, 0), 1);
+        timeline.style.setProperty('--progress', progress.toFixed(3));
+        ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateProgress);
+        }
+    }, { passive: true });
+    updateProgress();
+}
+
+const cmdk = document.getElementById('cmdk');
+const cmdkBtn = document.getElementById('cmdk-btn');
+const cmdkItems = [...document.querySelectorAll('#cmdk-list [role="option"]')];
+const cmdkEmpty = document.getElementById('cmdk-empty');
+const cmdkStatus = document.getElementById('cmdk-status');
+const cmdkCopied = { en: 'Email copied to clipboard.', id: translations.id['cmdk.copied'] };
+let cmdkActive = 0;
+
+function visibleCommands() {
+    return cmdkItems.filter((item) => !item.hidden);
+}
+
+function setActiveCommand(next) {
+    const list = visibleCommands();
+    cmdkItems.forEach((item) => item.setAttribute('aria-selected', 'false'));
+    if (!list.length) {
+        cmdkInput.removeAttribute('aria-activedescendant');
+        return;
+    }
+    cmdkActive = (next + list.length) % list.length;
+    const item = list[cmdkActive];
+    item.setAttribute('aria-selected', 'true');
+    cmdkInput.setAttribute('aria-activedescendant', item.id);
+    item.scrollIntoView({ block: 'nearest' });
+}
+
+function filterCommands() {
+    const query = cmdkInput.value.trim().toLowerCase();
+    cmdkItems.forEach((item) => {
+        const haystack = (item.textContent + ' ' + item.dataset.keys).toLowerCase();
+        item.hidden = query !== '' && !haystack.includes(query);
+    });
+    cmdkEmpty.hidden = visibleCommands().length > 0;
+    setActiveCommand(0);
+}
+
+function openCmdk() {
+    if (typeof cmdk.showModal !== 'function' || cmdk.open) {
+        return;
+    }
+    cmdkInput.value = '';
+    cmdkStatus.textContent = '';
+    filterCommands();
+    cmdk.showModal();
+    cmdkInput.focus();
+}
+
+function runCommand(item) {
+    if (!item) {
+        return;
+    }
+    if (item.dataset.go) {
+        cmdk.close();
+        document.querySelector(item.dataset.go).scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+        return;
+    }
+    if (item.dataset.url) {
+        cmdk.close();
+        window.open(item.dataset.url, '_blank', 'noopener');
+        return;
+    }
+    const action = item.dataset.act;
+    if (action === 'email') {
+        const done = () => {
+            cmdkStatus.textContent = cmdkCopied[currentLang];
+        };
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(CONTACT_EMAIL).then(done, () => {
+                window.location.href = 'mailto:' + CONTACT_EMAIL;
+            });
+        } else {
+            window.location.href = 'mailto:' + CONTACT_EMAIL;
+        }
+        return;
+    }
+    cmdk.close();
+    if (action === 'cv') {
+        document.querySelector('.cta .btn-primary').click();
+    } else if (action === 'json') {
+        window.open('me.json', '_blank', 'noopener');
+    } else if (action === 'theme') {
+        themeToggle.click();
+    } else if (action === 'lang') {
+        langToggle.click();
+    }
+}
+
+if (/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)) {
+    cmdkBtn.querySelector('kbd').textContent = '\u2318K';
+}
+
+cmdkBtn.addEventListener('click', openCmdk);
+cmdkInput.addEventListener('input', filterCommands);
+
+cmdkInput.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        setActiveCommand(cmdkActive + (event.key === 'ArrowDown' ? 1 : -1));
+    } else if (event.key === 'Enter') {
+        event.preventDefault();
+        runCommand(visibleCommands()[cmdkActive]);
+    }
+});
+
+cmdkItems.forEach((item) => {
+    item.addEventListener('click', () => runCommand(item));
+    item.addEventListener('pointermove', () => {
+        const index = visibleCommands().indexOf(item);
+        if (index !== cmdkActive) {
+            setActiveCommand(index);
+        }
+    });
+});
+
+cmdk.addEventListener('click', (event) => {
+    if (event.target === cmdk) {
+        cmdk.close();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    const typing = event.target.closest('input, textarea, [contenteditable="true"]');
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        if (cmdk.open) {
+            cmdk.close();
+        } else {
+            openCmdk();
+        }
+    } else if (event.key === '/' && !typing && !cmdk.open) {
+        event.preventDefault();
+        openCmdk();
+    }
+});
