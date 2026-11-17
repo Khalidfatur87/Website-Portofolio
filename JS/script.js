@@ -17,6 +17,7 @@ const translations = {
         'hero.cv': 'Unduh CV',
         'hero.contact': 'Hubungi saya',
         'hero.now': 'Saat ini',
+        'hero.based': 'Berbasis di Indonesia',
         'hero.nowWork': 'Mengerjakan VMS ONE dan Floxx',
         'hero.json': 'Buka JSON mentah',
         'hero.stack': 'Stack harian',
